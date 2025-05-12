@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        h1 {
+            color: #343a40;
+        }
+        .results {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Search Results</h1>
+    </header>
+    <div class="results title">
+        <p>Showing recipe for: <strong>{{ query }}</strong></p>
+    </div>
+    <div class="recipe">
+        {% if ingredients %}
+            <h2>{{ query }}</h2>
+            <h3>Time To Prepare</h3>
+            <p>{{ time }}</p>
+            <h3>Ingredients Needed:</h3>
+            <p>{{ ingredients }}</p>
+            <h3>Preparation Steps:</h3>
+            <p>{{ steps }}</p>
+        {% else %}
+            <p>No recipes found for your search.</p>
+        {% endif %}
+</body>
+</html>
